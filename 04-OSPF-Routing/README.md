@@ -105,7 +105,21 @@ Seluruh subnet LAN dari router lain otomatis muncul dengan flag **`ADo`** (*Acti
 
 ---
 
-## 5. Implementasi Skala Lanjut (Studi Kasus OSPF 24 Router)
-Telah diuji implementasi multi-node hingga **24 Router** terdistribusi:
+## 5. Implementasi Skala Lanjut & Route Redistribution
+
+### A. Penggabungan Dua Protokol Routing Dinamis (OSPF & RIPv2 Redistribution)
+Pada praktikum PJK 2 Pertemuan 7, diimplementasikan redistribusi rute antar Autonomous System / area yang menggunakan protokol berbeda (RIPv2 pada kantor cabang lama dan OSPF pada jaringan backbone):
+```routeros
+# Konfigurasi RIP Instance & Interface
+/routing rip instance add name=rip-instance-1 redistribute-ospf=yes
+/routing rip interface add interface=ether2 receive=v2 send=v2
+
+# Pada Router Border (ASBR), lakukan redistribusi rute RIP ke dalam domain OSPF
+/routing ospf instance set [ find default=yes ] redistribute-rip=as-type-1 redistribute-connected=as-type-1
+```
+*Hasil:* Router yang hanya menjalankan OSPF dapat mengenali subnet RIPv2 sebagai rute eksternal (**`ADo`** / **`E1`**), dan sebaliknya.
+
+### B. Studi Kasus OSPF Skala Besar (24 Router Terdistribusi)
+Telah diuji implementasi multi-node hingga **24 Router** terdistribusi satu angkatan:
 - Pembuktian routing convergence dan packet delivery antar subnet seluruh peserta praktikum.
-- Verifikasi hop-by-hop menggunakan `tracert` dan analisis metrik cost.
+- Verifikasi hop-by-hop menggunakan `tracert` dan analisis metrik cost Dijkstra.

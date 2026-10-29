@@ -1,6 +1,6 @@
 # 🌐 IT Infrastructure & Enterprise Networking Lab
 
-> Dokumentasi laboratorium, topologi, dan implementasi jaringan komputer tingkat enterprise (*Routing, Switching, High Availability, Tunneling, Bandwidth Management, Security Hardening & Stateful Firewall*) berbasis **MikroTik RouterOS** dan **Cisco IOS**.
+> Dokumentasi laboratorium, topologi, dan implementasi jaringan komputer tingkat enterprise (*Routing, Switching, High Availability, Link Aggregation, Tunneling, Bandwidth Management, Security Hardening & Stateful Firewall*) berbasis **MikroTik RouterOS** dan **Cisco IOS**.
 
 **Disusun oleh:**  
 **Fadli Sutaji Muidita**  
@@ -15,8 +15,8 @@ Berdasarkan praktikum intensif 2 tahun (Jaringan Komputer 1 & 2) dan pengujian l
 
 | Kategori | Protokol & Teknologi | Implementasi Nyata |
 |---|---|---|
-| **Routing Dinamis (Enterprise & ISP)** | OSPF (v2/v3), BGP, RIPv2 | Single & Multi-area OSPF, OSPF Mesh (hingga studi kasus 24 Router), eBGP/iBGP peering, Route Redistribution |
-| **High Availability & Redundansi** | Dual-ISP Failover, Bonding | Check-Gateway Ping/ARP, Distance metric priority, LACP / 802.3ad link aggregation |
+| **Routing Dinamis (Enterprise & ISP)** | OSPF (v2/v3), BGP, RIPv2 | Single & Multi-area OSPF, OSPF Mesh (hingga studi kasus 24 Router), eBGP/iBGP peering, Route Redistribution (OSPF + RIPv2) |
+| **High Availability & Redundansi** | Dual-ISP Failover, Bonding | Check-Gateway Ping/ARP, Distance metric priority, LACP / 802.3ad link aggregation, Balance-RR cable redundancy |
 | **Switching & VLAN** | IEEE 802.1Q, Trunking, RoS | Access Port, Trunk Port, Router-on-a-Stick (Inter-VLAN Routing) di Cisco & MikroTik |
 | **Stateful Firewall & Web Proxy** | Connection Tracking, Dst-NAT | "Drop Many Accept Few", Address Lists, Logging, Transparent Web Proxy (port 80 to 8080 redirect), URL filtering |
 | **Device Hardening & Security** | SSH v2, Port Security, SVI | RSA Key generation (2048-bit), SVI management, Port Security (sticky MAC violation), Console protection |
@@ -27,7 +27,7 @@ Berdasarkan praktikum intensif 2 tahun (Jaringan Komputer 1 & 2) dan pengujian l
 
 ---
 
-## 📂 Katalog Laboratorium (Lab Catalog)
+## 📂 Katalog Laboratorium (12 Modul Lengkap)
 
 ### Bagian 1: Fundamental Jaringan & Gateway Dasar
 * [Lab 01 — Subnetting & VLSM Cheat Sheet](./01-Subnetting/)
@@ -38,14 +38,14 @@ Berdasarkan praktikum intensif 2 tahun (Jaringan Komputer 1 & 2) dan pengujian l
   > *Failover otomatis 2 ISP (Ethernet + Wireless/Secondary WAN) menggunakan Distance Metric & Check-Gateway.*
 
 ### Bagian 3: Protokol Routing Dinamis (Enterprise Routing)
-* [Lab 04 — MikroTik OSPF Dynamic Routing (Backbone, Mesh & Multi-Router)](./04-OSPF-Routing/)
-  > *Konfigurasi OSPF Area 0, multi-router mesh, router-id, cost metric, hingga pengujian topologi skala besar 24 Router.*
+* [Lab 04 — MikroTik OSPF Dynamic Routing (Backbone, Mesh, 24 Router & Redistribution)](./04-OSPF-Routing/)
+  > *Konfigurasi OSPF Area 0, multi-router mesh, studi kasus 24 router satu angkatan, dan Route Redistribution OSPF + RIPv2.*
 * [Lab 05 — MikroTik BGP (Border Gateway Protocol)](./05-BGP-Routing/)
-  > *Implementasi Autonomous System (ASN), BGP Instance, BGP Peering antar routerboard, dan network advertisement.*
+  > *Implementasi Autonomous System (ASN), BGP Instance, BGP Peering antar routerboard fisik, dan network advertisement.*
 
 ### Bagian 4: Tunneling & Virtual Private Network (VPN)
 * [Lab 06 — Site-to-Site Tunneling (EoIP & PPTP)](./06-Tunneling-EoIP-PPTP/)
-  > *Layer-2 Ethernet over IP (EoIP) dan PPTP Point-to-Point tunneling untuk komunikasi antar kantor cabang.*
+  > *Layer-2 Ethernet over IP (EoIP) transparent bridge dan PPTP Point-to-Point tunneling untuk interkoneksi cabang.*
 
 ### Bagian 5: Switching & Segmentasi Trafik
 * [Lab 07 — VLAN & Inter-VLAN Routing (802.1Q)](./07-VLAN-InterVLAN/)
@@ -64,6 +64,10 @@ Berdasarkan praktikum intensif 2 tahun (Jaringan Komputer 1 & 2) dan pengujian l
 ### Bagian 8: Keamanan Jaringan & Web Proxy
 * [Lab 11 — MikroTik Stateful Firewall Filtering, Address Lists & Transparent Web Proxy](./11-MikroTik-Firewall-Filter-Proxy/)
   > *Penerapan filosofi Drop Many Accept Few, Connection Tracking (established/related/invalid), Address Lists blocking, dan Transparent Web Proxy.*
+
+### Bagian 9: Agregasi Link & Redundansi Kabel Fisik
+* [Lab 12 — MikroTik Interface Bonding & Link Aggregation (LACP 802.3ad & Failover)](./12-MikroTik-Interface-Bonding-LACP/)
+  > *Agregasi 2 kabel fisik RJ-45 secara paralel, mode Balance-RR, Active-Backup, LACP 802.3ad, dan pengujian cable cut.*
 
 ---
 
