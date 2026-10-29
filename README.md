@@ -1,6 +1,6 @@
 # 🌐 IT Infrastructure & Enterprise Networking Lab
 
-> Dokumentasi laboratorium, topologi, dan implementasi jaringan komputer tingkat enterprise (*Routing, Switching, Redundancy, Tunneling, & Security*) berbasis **MikroTik RouterOS** dan **Cisco IOS**.
+> Dokumentasi laboratorium, topologi, dan implementasi jaringan komputer tingkat enterprise (*Routing, Switching, Redundancy, Tunneling, & Security Hardening*) berbasis **MikroTik RouterOS** dan **Cisco IOS**.
 
 **Disusun oleh:**  
 **Fadli Sutaji Muidita**  
@@ -11,15 +11,15 @@ Mahasiswa D-IV Teknologi Rekayasa Internet — Departemen Teknik Elektro dan Inf
 
 ## 📌 Ringkasan Kemampuan Teknis (Technical Skill Map)
 
-Berdasarkan praktikum intensif dan pengujian laboratorium nyata (*physical hardware* RouterBOARD RB962 / RB951 & simulasi CHR/Packet Tracer):
+Berdasarkan praktikum intensif dan pengujian laboratorium nyata (*physical hardware* RouterBOARD RB962 / RB951, Cisco Catalyst & simulasi CHR / Cisco Packet Tracer):
 
 | Kategori | Protokol & Teknologi | Implementasi Nyata |
 |---|---|---|
-| **Routing Dinamis** | OSPF (v2/v3), BGP, RIPv2 | Single & Multi-area OSPF, OSPF Mesh (hingga studi kasus 24 Router), eBGP/iBGP peering, Route Redistribution |
-| **High Availability** | Dual-ISP Failover, Bonding | Check-Gateway Ping/ARP, Distance priority, LACP / 802.3ad link aggregation |
+| **Routing Dinamis (Enterprise & ISP)** | OSPF (v2/v3), BGP, RIPv2 | Single & Multi-area OSPF, OSPF Mesh (hingga studi kasus 24 Router), eBGP/iBGP peering, Route Redistribution |
+| **High Availability & Redundansi** | Dual-ISP Failover, Bonding | Check-Gateway Ping/ARP, Distance metric priority, LACP / 802.3ad link aggregation |
 | **Switching & VLAN** | IEEE 802.1Q, Trunking, RoS | Access Port, Trunk Port, Router-on-a-Stick (Inter-VLAN Routing) di Cisco & MikroTik |
-| **Tunneling & VPN** | EoIP, PPTP, GRE, L2TP | Layer-2 over Layer-3 EoIP tunnel, Site-to-Site tunneling, routing over VPN |
-| **Security & Firewall** | Filter Rules, NAT, Web Proxy | State tracking firewall (Input/Forward), Source NAT (Masquerade), Destination NAT, Transparent Web Proxy |
+| **Device Hardening & Security** | SSH v2, Port Security, Firewall | RSA Key generation, SVI management, Port Security (sticky MAC violation), Filter Rules, Masquerade |
+| **Tunneling & VPN** | EoIP, PPTP, GRE, L2TP | Layer-2 over Layer-3 EoIP transparent bridge, Site-to-Site tunneling, routing over VPN |
 | **Network Core Services** | DHCP, DNS, NTP, IPAM | DHCP Server/Client, Recursive DNS Resolver, VLSM / Subnetting |
 
 ---
@@ -47,6 +47,10 @@ Berdasarkan praktikum intensif dan pengujian laboratorium nyata (*physical hardw
 ### Bagian 5: Switching & Segmentasi Trafik
 * [Lab 07 — VLAN & Inter-VLAN Routing (802.1Q)](./07-VLAN-InterVLAN/)
   > *Segmentasi broadcast domain dengan 802.1Q trunking dan Router-on-a-Stick di Cisco IOS & MikroTik.*
+
+### Bagian 6: Cisco Enterprise Switching & Device Hardening
+* [Lab 08 — Cisco Device Hardening & Secure Remote Management (SSH v2)](./08-Cisco-Device-Hardening-SSH/)
+  > *Hardening switch Cisco Catalyst: Banner MOTD, SVI management VLAN 1, enkripsi RSA 2048-bit SSH v2, dan Layer-2 Port Security sticky MAC.*
 
 ---
 
