@@ -1,6 +1,6 @@
 # 🌐 IT Infrastructure & Enterprise Networking Lab
 
-> Dokumentasi laboratorium, topologi, dan implementasi jaringan komputer tingkat enterprise (*Routing, Switching, High Availability, Tunneling, Bandwidth Management & Security Hardening*) berbasis **MikroTik RouterOS** dan **Cisco IOS**.
+> Dokumentasi laboratorium, topologi, dan implementasi jaringan komputer tingkat enterprise (*Routing, Switching, High Availability, Tunneling, Bandwidth Management, Security Hardening & Stateful Firewall*) berbasis **MikroTik RouterOS** dan **Cisco IOS**.
 
 **Disusun oleh:**  
 **Fadli Sutaji Muidita**  
@@ -11,14 +11,15 @@ Mahasiswa D-IV Teknologi Rekayasa Internet — Departemen Teknik Elektro dan Inf
 
 ## 📌 Ringkasan Kemampuan Teknis (Technical Skill Map)
 
-Berdasarkan praktikum intensif dan pengujian laboratorium nyata (*physical hardware* RouterBOARD RB962 / RB951, Cisco Catalyst & simulasi CHR / Cisco Packet Tracer):
+Berdasarkan praktikum intensif 2 tahun (Jaringan Komputer 1 & 2) dan pengujian laboratorium nyata (*physical hardware* RouterBOARD RB962 / RB951, Cisco Catalyst & simulasi CHR / Cisco Packet Tracer):
 
 | Kategori | Protokol & Teknologi | Implementasi Nyata |
 |---|---|---|
 | **Routing Dinamis (Enterprise & ISP)** | OSPF (v2/v3), BGP, RIPv2 | Single & Multi-area OSPF, OSPF Mesh (hingga studi kasus 24 Router), eBGP/iBGP peering, Route Redistribution |
 | **High Availability & Redundansi** | Dual-ISP Failover, Bonding | Check-Gateway Ping/ARP, Distance metric priority, LACP / 802.3ad link aggregation |
 | **Switching & VLAN** | IEEE 802.1Q, Trunking, RoS | Access Port, Trunk Port, Router-on-a-Stick (Inter-VLAN Routing) di Cisco & MikroTik |
-| **Device Hardening & Security** | SSH v2, Port Security, Firewall | RSA Key generation (2048-bit), SVI management, Port Security (sticky MAC violation), Filter Rules, Masquerade |
+| **Stateful Firewall & Web Proxy** | Connection Tracking, Dst-NAT | "Drop Many Accept Few", Address Lists, Logging, Transparent Web Proxy (port 80 to 8080 redirect), URL filtering |
+| **Device Hardening & Security** | SSH v2, Port Security, SVI | RSA Key generation (2048-bit), SVI management, Port Security (sticky MAC violation), Console protection |
 | **Traffic Shaping & QoS** | Simple Queue, PCQ, Burst | Bandwidth limiting per IP/subnet, Guaranteed bandwidth (Limit-At), Burst threshold, Automatic fair sharing (PCQ) |
 | **Wireless & Captive Portal** | 802.11b/g/n, Hotspot Server | AP-Bridge, Station mode, Captive Portal Web Auth, User profiles, IP Binding (MAC bypass), Walled Garden |
 | **Tunneling & VPN** | EoIP, PPTP, GRE, L2TP | Layer-2 over Layer-3 EoIP transparent bridge, Site-to-Site tunneling, routing over VPN |
@@ -38,7 +39,7 @@ Berdasarkan praktikum intensif dan pengujian laboratorium nyata (*physical hardw
 
 ### Bagian 3: Protokol Routing Dinamis (Enterprise Routing)
 * [Lab 04 — MikroTik OSPF Dynamic Routing (Backbone, Mesh & Multi-Router)](./04-OSPF-Routing/)
-  > *Konfigurasi OSPF Area 0, multi-router mesh, router-id, cost metric, hingga pengujian topologi skala besar.*
+  > *Konfigurasi OSPF Area 0, multi-router mesh, router-id, cost metric, hingga pengujian topologi skala besar 24 Router.*
 * [Lab 05 — MikroTik BGP (Border Gateway Protocol)](./05-BGP-Routing/)
   > *Implementasi Autonomous System (ASN), BGP Instance, BGP Peering antar routerboard, dan network advertisement.*
 
@@ -59,6 +60,10 @@ Berdasarkan praktikum intensif dan pengujian laboratorium nyata (*physical hardw
   > *Traffic shaping, limit-at, max-limit, burst rate, dan pembagian bandwidth merata otomatis menggunakan algoritma PCQ.*
 * [Lab 10 — MikroTik Hotspot Gateway & Wireless (Captive Portal & User Management)](./10-MikroTik-Hotspot-Wireless/)
   > *Hotspot captive portal, user profiles, rate limiting per user, IP binding bypass, dan Walled Garden domain UGM.*
+
+### Bagian 8: Keamanan Jaringan & Web Proxy
+* [Lab 11 — MikroTik Stateful Firewall Filtering, Address Lists & Transparent Web Proxy](./11-MikroTik-Firewall-Filter-Proxy/)
+  > *Penerapan filosofi Drop Many Accept Few, Connection Tracking (established/related/invalid), Address Lists blocking, dan Transparent Web Proxy.*
 
 ---
 
